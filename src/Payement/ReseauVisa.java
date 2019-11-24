@@ -4,9 +4,7 @@ public class ReseauVisa extends ReseauPayement {
 
 	private double retenueRemboursement ;
 	
-	/**
-	 * Pays du commerce
-	 */
+
 	private String payString ;
 	
 

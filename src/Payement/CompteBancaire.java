@@ -1,13 +1,6 @@
 package Payement;
 
 
-
-/**
- * Public interface de compte en banque
- * @author MATHIEU Thomas
- * @author GARCIA Jérémy
- *
- */
 public abstract class CompteBancaire  {
 
 	protected ReseauPayement reseauxPayement ;

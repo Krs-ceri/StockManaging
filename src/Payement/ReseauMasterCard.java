@@ -2,9 +2,7 @@ package Payement;
 
 
 public class ReseauMasterCard extends ReseauPayement  {	
-	/**
-	 * Constructeur du ReseauxMastecard
-	 */
+
 	public ReseauMasterCard() {
 		super(0.005, "Masterard") ;
 	}
