@@ -2,14 +2,14 @@ package Grossiste;
 
 import java.util.List;
 
-public class CommerceIndependant extends Commerce{
+public class CommerceFranchise extends Commerce{
 
-	protected String taille;
-	public CommerceIndependant(String nom, String nombre, String an,String surface,
+	protected String mere;
+	public CommerceFranchise(String nom, String nombre, String an,String surface,
 			String siret, String minimum,String ristourne, String maisonMere, String pays,
 			String typeCompteEnBanque ) {
 		super(nom, nombre, an, surface, siret, minimum, ristourne, pays,"Independant", 0.0);
-		this.taille = maisonMere;
+		this.mere = maisonMere;
 	}
 
 

@@ -17,7 +17,11 @@ public class Fabrique {
 	public void setCatalogue(List<Produit> catalogue) {
 		this.catalogue = catalogue;
 	}
-	public void addProduct(Produit p) {
-		if(!this.catalogue.contains(p))	this.catalogue.add(p);
+	public boolean addProduct(Produit p) {
+		if(!this.catalogue.contains(p))	{
+			this.catalogue.add(p);
+			return true;
+		}
+		return false;
 	}
 }

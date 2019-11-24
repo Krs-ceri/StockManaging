@@ -4,6 +4,7 @@ public class Fournisseur {
 
 	private String name;
 	private Fabrique usine;
+	private FactoryCommerce factory = new FactoryCommerce() ;
 	// private List<Fabrique> powerplants;
 	
 	public Fournisseur(String n) {
@@ -25,5 +26,9 @@ public class Fournisseur {
 
 	public void setUsine(Fabrique usine) {
 		this.usine = usine;
+	}
+	
+	public void creerProduit(Produit p) {
+		usine.addProduct(p);
 	}
 }
