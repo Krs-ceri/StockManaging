@@ -60,7 +60,8 @@ public class ReseauVisa extends ReseauPayement {
 	}
 	
 
-	public double getCout() {
+	@Override
+	public double getValeur() {
 		return valeur;
 	}
 
@@ -74,10 +75,6 @@ public class ReseauVisa extends ReseauPayement {
 		this.valeur = cout;
 	}
 
-	@Override
-	public double getValeur() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 
 }
