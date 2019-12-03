@@ -1,5 +1,6 @@
 package Grossiste;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class Fabrique {
@@ -17,11 +18,29 @@ public class Fabrique {
 	public void setCatalogue(List<Produit> catalogue) {
 		this.catalogue = catalogue;
 	}
-	public boolean addProduct(Produit p) {
-		if(!this.catalogue.contains(p))	{
-			this.catalogue.add(p);
-			return true;
+
+	
+	public Produit getProduct(String name, double prix, LocalDate tmp) {
+		
+		for (int i = 0; i < this.catalogue.size(); i++) {
+			if(this.catalogue.get(i).getName().equals(name) 
+					&& this.catalogue.get(i).getPrix() == prix 
+					&& this.catalogue.get(i).getPeremption().toString().equals(tmp.toString()) ) {	
+				return this.catalogue.get(i);
+			}
 		}
-		return false;
+		Produit temp = new Produit(name, prix, tmp);
+		this.catalogue.add(temp);
+		return temp;
+	}
+	
+	public void deleteProduit(String name, double prix, LocalDate tmp) {
+		for (int i = 0; i < this.catalogue.size(); i++) {
+			if(this.catalogue.get(i).getName().equals(name) 
+					&& this.catalogue.get(i).getPrix() == prix 
+					&& this.catalogue.get(i).getPeremption().toString().equals(tmp.toString()) ) {	
+				this.catalogue.remove(i);
+			}
+		}
 	}
 }

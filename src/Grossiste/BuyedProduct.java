@@ -8,5 +8,20 @@ public class BuyedProduct extends Produit {
 		super(o.getName(), o.getPrix(), o.getPeremption());
 		this.nombre = n;
 	}
+	
+	public void addProductNumber(double n)
+	{
+		this.nombre += n;
+	}
+	
+	public void removeProductNumber(double n)
+	{
+		this.nombre -= n;
+	}
+	
+	public double getNombre()
+	{
+		return this.getNombre();
+	}
 
 }

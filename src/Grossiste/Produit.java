@@ -37,4 +37,15 @@ public class Produit {
 	public void setPeremption(LocalDate peremption) {
 		this.peremption = peremption;
 	}
+	public boolean isEqualTo(Produit p)
+	{
+		if(this.name.equals(p.getName()) && this.prix == p.prix && this.peremption.toString().contentEquals(p.peremption.toString()))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }

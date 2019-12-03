@@ -1,15 +1,18 @@
 package Grossiste;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import Payement.CompteBancaire;
 
 public class CommerceFranchise extends Commerce{
 
-	protected String mere;
-	public CommerceFranchise(String nom, String nombre, String an,String surface,
-			String siret, String minimum,String ristourne, String maisonMere, String pays,
-			String typeCompteEnBanque ) {
-		super(nom, nombre, an, surface, siret, minimum, ristourne, pays,"Independant", 0.0);
-		this.mere = maisonMere;
+	protected String siret;
+	public CommerceFranchise(String nom, String nombre, String an,String surface
+			, String minimum,String ristourne, String maisonMere, String pays,
+			CompteBancaire typeCompteEnBanque ) {
+		super(nom, nombre, an, surface, minimum, ristourne, pays,"Franchise", 0.0, typeCompteEnBanque);
+		this.siret = siret;
 	}
 
 
@@ -22,7 +25,7 @@ public class CommerceFranchise extends Commerce{
 	}
 
 	@Override
-	public void achat(List<BuyedProduct> stack) {
+	public void achat(ArrayList<Produit> stack) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -32,4 +35,6 @@ public class CommerceFranchise extends Commerce{
 		// TODO Auto-generated method stub
 		
 	}
+
+
 }

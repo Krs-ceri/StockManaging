@@ -1,41 +1,44 @@
 package Grossiste;
 
 import java.util.*;
+import Payement.*;
 
 public abstract class Commerce implements Cloneable{
 	protected String name ;
 
 	protected String nbEmp ;
 	protected String year ;
-	protected List<BuyedProduct> stock ;
+	protected ArrayList<Produit> stock ;
 	protected String surface ;
 	protected String siret ;
 	protected String minquantite ;
 	protected String ristourne ;
 	//protected String maisonMere ;
 	protected String pays ;
-	//protected CompteEnBanque compte ;
+	protected CompteBancaire compte ;
 	protected String type ;
 	protected double banque;
+	protected ArrayList<Memento> historique;
 
 	public Commerce(String n, String nbE, String years, String s,
-				String siret, String min, String r, String p, String commerce, double bank) {
+				 String min, String r, String p, String commerce, double bank, CompteBancaire com) {
 		// TODO Auto-generated constructor stub
 		this.name = n;
 		this.nbEmp = nbE;
 		this.year = years;
 		this.surface = s;
-		this.siret = siret;
+
 		this.minquantite = min;
 		this.ristourne = r;
 		this.pays = p;
 		this.type = commerce;
-		
-		List<BuyedProduct> stock = new ArrayList<BuyedProduct>();
+		this.historique = new ArrayList<Memento>();
+		this.stock = new ArrayList<Produit>();
+		this.compte = com;
 	}
 	
 	public abstract void remboursement(double montant);
-	public abstract void achat(List<BuyedProduct> stack);
+	public abstract void achat(ArrayList<Produit> stack);
 	public abstract void afficherStock();
 	
 	public String getName() {
@@ -62,12 +65,12 @@ public abstract class Commerce implements Cloneable{
 		this.year = year;
 	}
 
-	public List<BuyedProduct> getStock() {
+	public ArrayList<Produit>  getStock() {
 		return stock;
 	}
 
-	public void setStock(List<BuyedProduct> stock) {
-		this.stock = stock;
+	public void setStock(ArrayList<Produit> stack) {
+		this.stock = stack;
 	}
 
 	public String getSurface() {
